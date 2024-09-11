@@ -9,6 +9,7 @@ export default function Home() {
         <MyImage src="/assets/1.jpg" alt="" />
         <MyImage src="/assets/1.jpg" alt="" />
       </div>
+      <div>next feauture</div>
     </div>
   );
 }
