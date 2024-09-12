@@ -9,9 +9,9 @@ function MyImage({ src, alt }: {
   React.useEffect(() => {
     const body = document.querySelector('body');
     if (show) {
-      body.classList.add('overflow-hidden');
+      body?.classList.add('overflow-hidden');
     } else {
-      body.classList.remove('overflow-hidden');
+      body?.classList.remove('overflow-hidden');
     }
   }, [show]);
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import MyImage from '../components/myImage';
+import Slideshow from '../components/Slideshow';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <MyImage src="/assets/1.jpg" alt="" />
       </div>
       <div>next feauture</div>
+      <Slideshow />
     </div>
   );
 }
