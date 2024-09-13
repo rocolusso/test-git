@@ -1,29 +1,29 @@
 import React from 'react';
 import Image from 'next/image';
 
-function MyImage({ src, alt }: {
+function ImageContainer({ src, alt }: {
   src:string,
   alt:string
 }) {
-  const [show, setShow] = React.useState<boolean>(false);
+  const [isVisible, setIsVisible] = React.useState<boolean>(false);
   React.useEffect(() => {
     const body = document.querySelector('body');
-    if (show) {
+    if (isVisible) {
       body?.classList.add('overflow-hidden');
     } else {
       body?.classList.remove('overflow-hidden');
     }
-  }, [show]);
+  }, [isVisible]);
   return (
     <>
       {
-            show && (
+          isVisible && (
             <>
               <div className="absolute top-10 right-10 z-10">
                 <button
                   type="button"
                   className="  p-3 border"
-                  onClick={() => setShow(false)}
+                  onClick={() => setIsVisible(false)}
                 >
                   close
                 </button>
@@ -40,9 +40,9 @@ function MyImage({ src, alt }: {
             )
         }
       {
-            !show
+            !isVisible
             && (
-            <button type="button" onClick={() => setShow(true)}>
+            <button type="button" onClick={() => setIsVisible(true)}>
               <Image
                 src={src}
                 alt={alt}
@@ -56,4 +56,4 @@ function MyImage({ src, alt }: {
   );
 }
 
-export default MyImage;
+export default ImageContainer;
